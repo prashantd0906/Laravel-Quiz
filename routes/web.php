@@ -9,7 +9,7 @@ use App\Http\Middleware\Auth;
 
 Route::get('/', function () {
     return redirect('/login');
-});
+})->name('/');
 
 // Auth Routes
 Route::get('/register', [AuthController::class, 'showRegister']);

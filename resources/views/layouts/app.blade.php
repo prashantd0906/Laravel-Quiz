@@ -10,7 +10,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{{ url('/') }}">@yield('title', 'Laravel Quiz App')</a>
+            <a class="navbar-brand" href="{{ route('/') }}">@yield('title', 'Laravel Quiz App')</a>
 
             <div class="d-flex ms-auto">
                 @if(Auth::check())

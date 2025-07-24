@@ -10,12 +10,11 @@ class QuestionSeeder extends Seeder
 {
     public function run()
     {
-        // Create quiz if it doesn't exist
+        // Create quiz if doesn't exist
         $quiz = Quiz::firstOrCreate(
             ['title' => 'General Knowledge Quiz']
         );
 
-        // Insert questions for this quiz
         Question::insert([
             [
                 'quiz_id' => $quiz->id,

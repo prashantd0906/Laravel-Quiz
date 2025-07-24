@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('results', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained()->onDelete('cascade'); //If a user is deleted, all related quiz results will also be deleted.
-            $table->foreignId('quiz_id')->constrained()->onDelete('cascade');//If a quiz is deleted, all related results will be deleted.
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade'); //If a user is deleted, all related quiz results will also be deleted.
+            $table->foreign('quiz_id')->references('id')->on('quizes')->onDelete('cascade');//If a quiz is deleted, all related results will be deleted.
             $table->integer('score');
             $table->timestamps();
         });
